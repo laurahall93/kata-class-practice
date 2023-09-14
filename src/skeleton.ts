@@ -1,11 +1,35 @@
-/**
- * Adds together two numbers
- * @param a - the first number to add
- * @param b - the second number to add
- * @returns the total
- */
-function sum(a: number, b: number): number {
-    return a + b;
+class UniqueLottoNumGenerator {
+    minNumber: number;
+    maxNumber: number;
+    uniqueNumArr: number[] = [];
+
+    constructor(minNumber: number, maxNumber: number) {
+        this.minNumber = minNumber;
+        this.maxNumber = maxNumber;
+        this.uniqueNumArr = [];
+    }
+
+    randomNumberGenerator(): number {
+        const randomNum =
+            Math.floor(Math.random() * this.maxNumber) + this.minNumber;
+        return randomNum;
+    }
+
+    uniqueNumbers(): number[] {
+        return this.uniqueNumArr;
+    }
 }
 
-export { sum };
+const lotteryNumbers = new UniqueLottoNumGenerator(1, 71);
+
+console.log(lotteryNumbers.randomNumberGenerator());
+console.log(lotteryNumbers.uniqueNumbers());
+
+/*for (numArr = 0; numArr.length = 5; numArr++)
+generate the first random number
+push next number into empty array
+   if next number exists
+    uniquenumber()
+push number into array
+else push
+*/
